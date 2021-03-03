@@ -1,0 +1,22 @@
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  width: 300px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.formLabel {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}
+.formInput {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.formButton {
+  padding: 10px;
+}
