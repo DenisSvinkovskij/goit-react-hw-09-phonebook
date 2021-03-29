@@ -23,14 +23,10 @@ export default function ContactForm(params) {
   };
 
   const showToast = message => {
-    setHaveError(prev => ({
-      haveError: !prev,
-    }));
+    setHaveError(true);
     setErrorMessage(message);
     setTimeout(() => {
-      setHaveError(prev => ({
-        haveError: !prev,
-      }));
+      setHaveError(false);
     }, 1500);
   };
 

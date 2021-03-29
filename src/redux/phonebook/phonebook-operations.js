@@ -9,6 +9,9 @@ import {
   addContactError,
   deleteContactError,
   fetchContactsError,
+  editContactRequest,
+  editContactSuccess,
+  editContactError,
 } from './phonebook-actions';
 
 axios.defaults.baseURL = 'https://goit-phonebook-api.herokuapp.com';
@@ -36,6 +39,18 @@ const addContact = (name, number) => dispatch => {
     .catch(error => dispatch(addContactError(error.message)));
 };
 
+const editContact = (id, name, number) => dispatch => {
+  dispatch(editContactRequest());
+  const patchContact = { name, number };
+
+  axios
+    .patch(`/contacts/${id}`, patchContact)
+    .then(({ data }) => {
+      dispatch(editContactSuccess(data));
+    })
+    .catch(error => dispatch(editContactError(error.message)));
+};
+
 const deleteContact = contactId => dispatch => {
   dispatch(deleteContactRequest());
 
@@ -45,6 +60,6 @@ const deleteContact = contactId => dispatch => {
     .catch(error => dispatch(deleteContactError(error.message)));
 };
 
-const operations = { fetchContacts, addContact, deleteContact };
+const operations = { fetchContacts, addContact, deleteContact, editContact };
 
 export default operations;

@@ -61,3 +61,9 @@
   opacity: 0.1;
   transition: all 250ms ease-in;
 }
+
+.wrapperBtn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+}

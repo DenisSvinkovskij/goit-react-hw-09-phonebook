@@ -12,6 +12,10 @@ export const addContactRequest = createAction('phonebook/addContactRequest');
 export const addContactSuccess = createAction('phonebook/addContactSuccess');
 export const addContactError = createAction('phonebook/addContactError');
 
+export const editContactRequest = createAction('phonebook/editContactRequest');
+export const editContactSuccess = createAction('phonebook/editContactSuccess');
+export const editContactError = createAction('phonebook/editContactError');
+
 export const deleteContactRequest = createAction(
   'phonebook/deleteContactRequest',
 );
